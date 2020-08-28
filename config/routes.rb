@@ -276,6 +276,7 @@ Rails.application.routes.draw do
   end
 
   resource :onboarding, only: :show
+  resources :profiles, only: %i[update]
 
   get "/verify_email_ownership", to: "email_authorizations#verify", as: :verify_email_authorizations
   get "/search/tags" => "search#tags"
